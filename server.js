@@ -321,7 +321,7 @@ app.get('/logout', (req, res) => {
             console.error("Session destruction error:", err);
             return res.status(500).send("Could not log you out.");
         }
-        const returnTo = encodeURIComponent(`/`);
+        const returnTo = encodeURIComponent(`https://netflix-auth-demo-varun.onrender.com/`);
         res.redirect(`${AUTH0_DOMAIN}/v2/logout?client_id=${AUTH0_CLIENT_ID}&returnTo=${returnTo}`);
     });
 });
